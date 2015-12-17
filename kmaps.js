@@ -1,4 +1,27 @@
 // Written by Bao nguyen - mobile +84969689893
+// 
+// 
+// <div id=gmap_canvas class="gmap map mrt30">
+// <div class=Lat>10.359352</div>
+// <div class=Lng>106.673089</div>
+// <div class=MarginLat>-0.0050</div>
+// <div class=MarginLng>0</div>
+// <div class=imgMap>images/logo.png</div>
+// <address>211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam</address>
+// <div class=infoWindow>
+//     <h3>Đời Photo</h3>
+//     <p><strong>Tại Tiền Giang :</strong>
+//         <br> 211A Ngô Tùng Châu, KP.3, P.1, Gò Công
+//         <br> Email: info@doi.photo
+//         <br> Tel : <a href=tel:+84908915925 onclick="_gaq.push(['_trackEvent', 'Mobile', 'Click to Call'])">0908.915.925</a></p>
+// </div>
+// <div class=mapStyle>1</div>
+// <div class=mapZoom>15</div>
+// <div class=scrollwheel>false</div>
+// <div class=draggable>true</div>
+// <div class=disableDefaultUI>true</div>
+// </div>
+// 
 ;(function ( $ ) {
      $.fn.extend({ 
          kgmaps: function(options) {
