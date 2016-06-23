@@ -25,8 +25,6 @@
 ;(function ( $ ) {
      $.fn.extend({ 
          kgmaps: function(options) {
-              
-
               var me = $(this);
               var geocoder = new google.maps.Geocoder();
               var address = me.find('address').html();
