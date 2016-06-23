@@ -51,9 +51,11 @@ gulp.task('build', ['clean'], () => {
 gulp.task('product', function(cb) {
     runSequence(
         'babel',
+        'copy',
         'uglify',
         'jade',
         'header',
+        'browserSync',
         'watch',
         cb
     );
@@ -62,9 +64,10 @@ gulp.task('product', function(cb) {
 // Server tasks with watch
 gulp.task('test', function(cb) {
     runSequence(
-        'babel',       
-        'jshint',
-        'eslint',
+        'babel',   
+        'copy',    
+        // 'jshint',
+        // 'eslint',
         'jade',
         'browserSync',
         'watch',
