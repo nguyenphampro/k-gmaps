@@ -44,56 +44,26 @@ html(dir='ltr', lang='en')
 			h1.display-4(style="margin:2rem 0;") K-Gmaps 
 			.jumbotron
 				#gmap_canvas.gmap
-					.Lat 10.359352
-					.Lng 106.673089
-					.MarginLat -0.0050
-					.MarginLng 0
-					.imgMap images/logo_map.png
-					address 211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam
-					.infoWindow
-						h3 Bảo Nguyên
-						p
-							strong Tại Tiền Giang :
-							br
-							|  211A Ngô Tùng Châu, KP.3, P.1, Gò Công
-							br
-							|  Email: info@baonguyenyam.com
-							br
-							|  Tel : 
-							a(href='tel:+840000000', onclick="_gaq.push(['_trackEvent', 'Mobile', 'Click to Call'])") 0908.000.000
-					.mapStyle 1
-					.mapZoom 15
-					.scrollwheel false
-					.draggable true
-					.disableDefaultUI true
 			.row.marketing
 				.col-lg-12
 					h4 JS
 					pre.prettyprint.lang-js.
 						$(document).ready(function() {
-						  $('#gmap_canvas').kmaps();
+						  $('#gmap_canvas').kmaps({
+						    zoom: 15,
+						    Lat: 10.359352,
+						    Lng: 106.673089,
+						    scrollwheel: false,
+						    draggable: true,
+						    disableDefaultUI: true,
+						    styles: 2
+						  });
 						});
 			.row.marketing
 				.col-lg-12
 					h4 HTML
 					pre#quine.prettyprint.lang-html.
-						<div id="gmap_canvas" class="gmap">
-						  <div class="Lat">10.359352</div>
-						  <div class="Lng">106.673089</div>
-						  <div class="MarginLat">-0.0050</div>
-						  <div class="MarginLng">0</div>
-						  <div class="imgMap">images/logo_map.png</div>
-						    <address>211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam</address>
-						  <div class="infoWindow">
-						    <h3>Bảo Nguyên</h3>
-						    <p><strong>Tại Tiền Giang :</strong><br> 211A Ngô Tùng Châu, KP.3, P.1, Gò Công<br> Email: info@baonguyenyam.com<br> Tel : <a href="tel:+840000000" onclick="_gaq.push(['_trackEvent', 'Mobile', 'Click to Call'])">0908.000.000</a></p>
-						  </div>
-						  <div class="mapStyle">1</div>
-						  <div class="mapZoom">15</div>
-						  <div class="scrollwheel">false</div>
-						  <div class="draggable">true</div>
-						  <div class="disableDefaultUI">true</div>
-						</div>
+						<div id="gmap_canvas" class="gmap"></div>
 			footer.footer.text-center
 				p © BaoNguyen 2014
 
