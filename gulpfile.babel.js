@@ -52,7 +52,9 @@ gulp.task('product', function(cb) {
     runSequence(
         'babel',
         'uglify',
+        'jade',
         'header',
+        'watch',
         cb
     );
 });
@@ -63,6 +65,7 @@ gulp.task('test', function(cb) {
         'babel',       
         'jshint',
         'eslint',
+        'jade',
         'browserSync',
         'watch',
         cb
