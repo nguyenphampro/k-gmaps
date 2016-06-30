@@ -27,19 +27,19 @@ ___
 
 ##### Include jQuery
 
-```
+```js
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 ```
 
 ##### Include Google Map
 
-```
+```js
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 ```
 
 #Ini map
 
-```
+```js
 <script src="js/kmaps.js"></script>
 <script>
 	$(document).ready(function() {
@@ -50,7 +50,7 @@ ___
 
 ##### Via HTML
 
-```
+```html
 <div id="gmap_canvas" class="gmap">
   <div class="Lat">10.359352</div>
   <div class="Lng">106.673089</div>
