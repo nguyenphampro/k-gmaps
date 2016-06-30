@@ -49,7 +49,7 @@ html(dir='ltr', lang='en')
 					.MarginLat -0.0050
 					.MarginLng 0
 					.imgMap images/logo_map.png
-					address 211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam
+					//- address 211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam
 					.mapType ROADMAP
 					.mapCenter true
 					.Title Hello
@@ -67,9 +67,11 @@ html(dir='ltr', lang='en')
 							a(href='tel:+840000000', onclick="_gaq.push(['_trackEvent', 'Mobile', 'Click to Call'])") 0908.000.000
 					.mapStyle black
 					.mapZoom 15
+					.disableOpenURL false
 					.scrollwheel true
 					.draggable true
 					.disableDefaultUI false
+					.OpenURL View full map
 			.row.marketing
 				.col-lg-12
 					h4 JS
@@ -99,6 +101,8 @@ html(dir='ltr', lang='en')
 						  <div class="mapStyle">black</div>
 						  <div class="mapZoom">15</div>
 						  <div class="scrollwheel">true</div>
+						  <div class="disableOpenURL">false</div>
+						  <div class="OpenURL">View full map</div>
 						  <div class="draggable">true</div>
 						  <div class="disableDefaultUI">false</div>
 						</div>

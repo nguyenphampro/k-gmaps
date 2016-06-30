@@ -65,7 +65,9 @@ html(dir='ltr', lang='en')
 						    mapType: 'ROADMAP', // SATELLITE, HYBRID, TERRAIN,
 						    Title: 'Hello',
 						    infoWindow: '<b>Hello</b>',
-						    InfoWidth: '200'
+						    InfoWidth: '200',
+						    disableOpenURL: true,
+						    OpenURL: 'View full map'
 						  });
 						});
 			.row.marketing
@@ -102,7 +104,7 @@ html(dir='ltr', lang='en')
 			$(document).ready(function() {
 							$('.gmap_canvas').kmaps({
 								zoom: 15,
-								Address: '211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam',
+								Address: '157 Vo Thi Sau',
 								Lat: '10.359352',
 								Lng: '106.673089',
 								MarginLat: '-0.0050',
@@ -116,6 +118,8 @@ html(dir='ltr', lang='en')
 								mapType: 'ROADMAP', // SATELLITE, HYBRID, TERRAIN,
 								Title: 'Hello',
 								infoWindow: '<b>Hello</b>',
-								InfoWidth: '200'
+								InfoWidth: '200',
+								disableOpenURL: true,
+								OpenURL: 'View full map'
 							});
 			});
