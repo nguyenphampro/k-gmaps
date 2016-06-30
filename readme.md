@@ -9,6 +9,23 @@
 * Copyright 2016 by Bao Nguyen.
 * MIT License
 
+# Features
+
+* EASY to SEO by HTML tag gennerate 
+* Multi Style
+* Toggle Fullscreen button
+* Open URL button 
+* Margin pin icon
+* Customize control bar 
+* Disable/Enable drag & drop
+* Disable/Enable Zoom
+* Disable/Enable click to zoom
+* Disable/Enable map focus in Mobile view 
+* Customize infoWindow
+* Customize pin icon
+* Auto open infoWindow
+* ...
+
 ===============================
 #Install
 
