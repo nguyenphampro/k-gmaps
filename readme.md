@@ -27,13 +27,13 @@ ___
 
 ##### Include jQuery
 
-```js
+```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 ```
 
 ##### Include Google Map
 
-```js
+```html
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 ```
 
@@ -80,7 +80,7 @@ ___
 
 ##### Via JS
 
-```
+```js
 $(document).ready(function() {
   $('.gmap_canvas').kmaps({
     zoom: 15,
