@@ -43,27 +43,36 @@ html(dir='ltr', lang='en')
 		.container
 			h1.display-4(style="margin:2rem 0;") K-Gmaps 
 			.jumbotron
-				#gmap_canvas.gmap
+				.gmap_canvas.gmap
 			.row.marketing
 				.col-lg-12
 					h4 JS
 					pre.prettyprint.lang-js.
 						$(document).ready(function() {
-						  $('#gmap_canvas').kmaps({
+						  $('.gmap_canvas').kmaps({
 						    zoom: 15,
-						    Lat: 10.359352,
-						    Lng: 106.673089,
+						    Address: '211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam',
+						    Lat: '10.359352',
+						    Lng: '106.673089',
+						    MarginLat: '-0.0050',
+						    MarginLng: '0',
+						    center: true,
 						    scrollwheel: false,
 						    draggable: true,
 						    disableDefaultUI: true,
-						    styles: 2
+						    Styles: 'red', // white, black, river, green, cyan, yellow
+						    imgMap: 'images/logo_map.png',
+						    mapType: 'ROADMAP', // SATELLITE, HYBRID, TERRAIN,
+						    Title: 'Hello',
+						    infoWindow: '<b>Hello</b>',
+						    InfoWidth: '200'
 						  });
 						});
 			.row.marketing
 				.col-lg-12
 					h4 HTML
 					pre#quine.prettyprint.lang-html.
-						<div id="gmap_canvas" class="gmap"></div>
+						<div class="gmap_canvas"></div>
 			footer.footer.text-center
 				p © BaoNguyen 2014
 
@@ -91,7 +100,22 @@ html(dir='ltr', lang='en')
 			//]]>
 			// READY ////////////////////////////////////////////
 			$(document).ready(function() {
-					if ($('#gmap_canvas').length) {
-							$('#gmap_canvas').kmaps();
-					}
+							$('.gmap_canvas').kmaps({
+								zoom: 15,
+								Address: '211A Ngô Tùng Châu, Gò Công, Tiền Giang, Việt Nam',
+								Lat: '10.359352',
+								Lng: '106.673089',
+								MarginLat: '-0.0050',
+								MarginLng: '0',
+								center: true,
+								scrollwheel: false,
+								draggable: true,
+								disableDefaultUI: true,
+								Styles: 'red', // white, black, river, green, cyan, yellow
+								imgMap: 'images/logo_map.png',
+								mapType: 'ROADMAP', // SATELLITE, HYBRID, TERRAIN,
+								Title: 'Hello',
+								infoWindow: '<b>Hello</b>',
+								InfoWidth: '200'
+							});
 			});
