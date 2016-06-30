@@ -12,11 +12,11 @@
 ;
 (function ($) {
     $.fn.extend({
-        kmaps: function kmaps(maps_options) {
+        kmaps: function kmaps(kmap) {
 
-            var new_maps_options = maps_options;
+            var kmaps = kmap;
 
-            var defaultval = {
+            var def = {
                 zoom: 15,
                 Lng: 0,
                 Lat: 0,
@@ -42,7 +42,7 @@
             return this.each(function (elm) {
                 var me = $(this);
 
-                var checkClass = {
+                var fc = {
                     zoom: me.find('.mapZoom').text(),
                     Lng: me.find('.Lng').text(),
                     Lat: me.find('.Lat').text(),
@@ -52,7 +52,7 @@
                     scrollwheel: me.find('.scrollwheel').text(),
                     draggable: me.find('.draggable').text(),
                     disableDefaultUI: me.find('.disableDefaultUI').text(),
-                    styles: me.find('.mapStyle').text(),
+                    styles: me.find('.ms').text(),
                     imgMap: me.find('.imgMap').text(),
                     mapTypeId: me.find('.mapType').text(),
                     infoWindow: me.find('.infoWindow').html(),
@@ -65,94 +65,94 @@
                     disableOpenURL: me.find('.disableOpenURL').text()
                 };
 
-                if (!new_maps_options) {
+                if (!kmaps) {
                     var op = {
-                        zoom: checkClass.zoom ? parseInt(checkClass.zoom) : defaultval.zoom,
-                        Lng: checkClass.Lng ? checkClass.Lng : defaultval.Lng,
-                        Lat: checkClass.Lat ? checkClass.Lat : defaultval.Lat,
-                        MarginLat: checkClass.MarginLat ? checkClass.MarginLat : defaultval.MarginLat,
-                        MarginLng: checkClass.MarginLng ? checkClass.MarginLng : defaultval.MarginLng,
-                        center: checkClass.center ? checkClass.center : defaultval.center,
-                        scrollwheel: checkClass.scrollwheel ? checkClass.scrollwheel : defaultval.scrollwheel,
-                        draggable: checkClass.draggable ? checkClass.draggable : defaultval.draggable,
-                        disableDefaultUI: checkClass.disableDefaultUI ? checkClass.disableDefaultUI : defaultval.disableDefaultUI,
-                        styles: checkClass.styles ? checkClass.styles : defaultval.Styles,
-                        imgMap: checkClass.imgMap ? checkClass.imgMap : defaultval.imgMap,
-                        mapTypeId: checkClass.mapTypeId ? checkClass.mapTypeId : defaultval.mapType,
-                        infoWindow: checkClass.infoWindow ? checkClass.infoWindow : defaultval.infoWindow,
-                        InfoWidth: checkClass.InfoWidth ? checkClass.InfoWidth : defaultval.InfoWidth,
-                        Title: checkClass.Title ? checkClass.Title : defaultval.Title,
-                        OpenURL: checkClass.OpenURL ? checkClass.OpenURL : defaultval.OpenURL,
-                        disableOpenURL: checkClass.disableOpenURL ? checkClass.disableOpenURL : defaultval.disableOpenURL,
-                        fullscreenControl: checkClass.fullscreenControl ? checkClass.fullscreenControl : defaultval.fullscreenControl,
-                        disableDoubleClickZoom: checkClass.disableDoubleClickZoom ? checkClass.disableDoubleClickZoom : defaultval.disableDoubleClickZoom,
-                        Address: checkClass.Address ? checkClass.Address : defaultval.Address
+                        zoom: fc.zoom ? parseInt(fc.zoom) : def.zoom,
+                        Lng: fc.Lng ? fc.Lng : def.Lng,
+                        Lat: fc.Lat ? fc.Lat : def.Lat,
+                        MarginLat: fc.MarginLat ? fc.MarginLat : def.MarginLat,
+                        MarginLng: fc.MarginLng ? fc.MarginLng : def.MarginLng,
+                        center: fc.center ? fc.center : def.center,
+                        scrollwheel: fc.scrollwheel ? fc.scrollwheel : def.scrollwheel,
+                        draggable: fc.draggable ? fc.draggable : def.draggable,
+                        disableDefaultUI: fc.disableDefaultUI ? fc.disableDefaultUI : def.disableDefaultUI,
+                        styles: fc.styles ? fc.styles : def.Styles,
+                        imgMap: fc.imgMap ? fc.imgMap : def.imgMap,
+                        mapTypeId: fc.mapTypeId ? fc.mapTypeId : def.mapType,
+                        infoWindow: fc.infoWindow ? fc.infoWindow : def.infoWindow,
+                        InfoWidth: fc.InfoWidth ? fc.InfoWidth : def.InfoWidth,
+                        Title: fc.Title ? fc.Title : def.Title,
+                        OpenURL: fc.OpenURL ? fc.OpenURL : def.OpenURL,
+                        disableOpenURL: fc.disableOpenURL ? fc.disableOpenURL : def.disableOpenURL,
+                        fullscreenControl: fc.fullscreenControl ? fc.fullscreenControl : def.fullscreenControl,
+                        disableDoubleClickZoom: fc.disableDoubleClickZoom ? fc.disableDoubleClickZoom : def.disableDoubleClickZoom,
+                        Address: fc.Address ? fc.Address : def.Address
 
                     };
                 } else {
                     var op = {
-                        zoom: maps_options.zoom ? parseInt(maps_options.zoom) : defaultval.zoom,
-                        Lng: maps_options.Lng ? maps_options.Lng : defaultval.Lng,
-                        Lat: maps_options.Lat ? maps_options.Lat : defaultval.Lat,
-                        MarginLat: maps_options.MarginLat ? maps_options.MarginLat : defaultval.MarginLat,
-                        MarginLng: maps_options.MarginLng ? maps_options.MarginLng : defaultval.MarginLng,
-                        center: maps_options.center ? maps_options.center : defaultval.center,
-                        scrollwheel: maps_options.scrollwheel ? maps_options.scrollwheel : defaultval.scrollwheel,
-                        draggable: maps_options.draggable ? maps_options.draggable : defaultval.draggable,
-                        disableDefaultUI: maps_options.disableDefaultUI ? maps_options.disableDefaultUI : defaultval.disableDefaultUI,
-                        styles: maps_options.styles ? maps_options.styles : defaultval.Styles,
-                        imgMap: maps_options.imgMap ? maps_options.imgMap : defaultval.imgMap,
-                        mapTypeId: maps_options.mapTypeId ? maps_options.mapTypeId : defaultval.mapType,
-                        infoWindow: maps_options.infoWindow ? maps_options.infoWindow : defaultval.infoWindow,
-                        InfoWidth: maps_options.InfoWidth ? maps_options.InfoWidth : defaultval.InfoWidth,
-                        Title: maps_options.Title ? maps_options.Title : defaultval.Title,
-                        OpenURL: maps_options.OpenURL ? maps_options.OpenURL : defaultval.OpenURL,
-                        disableOpenURL: maps_options.disableOpenURL ? maps_options.disableOpenURL : defaultval.disableOpenURL,
-                        disableDoubleClickZoom: maps_options.disableDoubleClickZoom ? maps_options.disableDoubleClickZoom : defaultval.disableDoubleClickZoom,
-                        fullscreenControl: maps_options.fullscreenControl ? maps_options.fullscreenControl : defaultval.fullscreenControl,
-                        Address: maps_options.Address ? maps_options.Address : defaultval.Address
+                        zoom: kmap.zoom ? parseInt(kmap.zoom) : def.zoom,
+                        Lng: kmap.Lng ? kmap.Lng : def.Lng,
+                        Lat: kmap.Lat ? kmap.Lat : def.Lat,
+                        MarginLat: kmap.MarginLat ? kmap.MarginLat : def.MarginLat,
+                        MarginLng: kmap.MarginLng ? kmap.MarginLng : def.MarginLng,
+                        center: kmap.center ? kmap.center : def.center,
+                        scrollwheel: kmap.scrollwheel ? kmap.scrollwheel : def.scrollwheel,
+                        draggable: kmap.draggable ? kmap.draggable : def.draggable,
+                        disableDefaultUI: kmap.disableDefaultUI ? kmap.disableDefaultUI : def.disableDefaultUI,
+                        styles: kmap.styles ? kmap.styles : def.Styles,
+                        imgMap: kmap.imgMap ? kmap.imgMap : def.imgMap,
+                        mapTypeId: kmap.mapTypeId ? kmap.mapTypeId : def.mapType,
+                        infoWindow: kmap.infoWindow ? kmap.infoWindow : def.infoWindow,
+                        InfoWidth: kmap.InfoWidth ? kmap.InfoWidth : def.InfoWidth,
+                        Title: kmap.Title ? kmap.Title : def.Title,
+                        OpenURL: kmap.OpenURL ? kmap.OpenURL : def.OpenURL,
+                        disableOpenURL: kmap.disableOpenURL ? kmap.disableOpenURL : def.disableOpenURL,
+                        disableDoubleClickZoom: kmap.disableDoubleClickZoom ? kmap.disableDoubleClickZoom : def.disableDoubleClickZoom,
+                        fullscreenControl: kmap.fullscreenControl ? kmap.fullscreenControl : def.fullscreenControl,
+                        Address: kmap.Address ? kmap.Address : def.Address
                     };
                 }
 
                 function CenterControl(controlDiv, map) {
-                    var urlFull = 'https://www.google.com/maps/place/';
+                    var url = 'https://www.google.com/maps/place/';
                     // Set CSS for the control border.
-                    var controlUI = document.createElement('div');
-                    controlUI.style.backgroundColor = '#fff';
-                    controlUI.style.border = '2px solid #fff';
-                    controlUI.style.borderRadius = '2px';
-                    controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-                    controlUI.style.cursor = 'pointer';
-                    controlUI.style.marginBottom = '5px';
-                    controlUI.style.marginTop = '10px';
-                    controlUI.style.marginRight = '10px';
-                    controlUI.style.textAlign = 'center';
-                    controlUI.title = 'Click to view full map';
-                    controlDiv.appendChild(controlUI);
+                    var ct = document.createElement('div');
+                    ct.style.backgroundColor = '#fff';
+                    ct.style.border = '2px solid #fff';
+                    ct.style.borderRadius = '2px';
+                    ct.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+                    ct.style.cursor = 'pointer';
+                    ct.style.marginBottom = '5px';
+                    ct.style.marginTop = '10px';
+                    ct.style.marginRight = '10px';
+                    ct.style.textAlign = 'center';
+                    ct.title = 'Click to view full map';
+                    controlDiv.appendChild(ct);
 
                     // Set CSS for the control interior.
-                    var controlText = document.createElement('div');
-                    controlText.style.color = 'rgb(25,25,25)';
-                    controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-                    controlText.style.fontSize = '12px';
-                    controlText.style.lineHeight = '1.5rem';
-                    controlText.style.paddingLeft = '3px';
-                    controlText.style.paddingRight = '3px';
+                    var cx = document.createElement('div');
+                    cx.style.color = 'rgb(25,25,25)';
+                    cx.style.fontFamily = 'Roboto,Arial,sans-serif';
+                    cx.style.fontSize = '12px';
+                    cx.style.lineHeight = '1.5rem';
+                    cx.style.paddingLeft = '3px';
+                    cx.style.paddingRight = '3px';
                     if (op.Address) {
-                        controlText.innerHTML = '<a target=_blank href="' + urlFull + op.Address + '/@' + op.Lat + ',' + op.Lng + ',' + op.zoom + 'z">' + op.OpenURL + '</a>';
+                        cx.innerHTML = '<a target=_blank href="' + url + op.Address + '/@' + op.Lat + ',' + op.Lng + ',' + op.zoom + 'z">' + op.OpenURL + '</a>';
                     } else {
-                        controlText.innerHTML = '<a target=_blank href="' + urlFull + '@' + op.Lat + ',' + op.Lng + ',' + op.zoom + 'z">' + op.OpenURL + '</a>';
+                        cx.innerHTML = '<a target=_blank href="' + url + '@' + op.Lat + ',' + op.Lng + ',' + op.zoom + 'z">' + op.OpenURL + '</a>';
                     }
-                    controlUI.appendChild(controlText);
+                    ct.appendChild(cx);
 
-                    controlUI.addEventListener('click', function () {});
+                    ct.addEventListener('click', function () {});
                 };
 
                 // Styles
                 if (op.styles == 'default') {
-                    var mapStyle = '';
+                    var ms = '';
                 } else if (op.styles == 'white') {
-                    var mapStyle = [{
+                    var ms = [{
                         "featureType": "landscape",
                         "stylers": [{
                             "saturation": -100
@@ -229,7 +229,7 @@
                         }]
                     }];
                 } else if (op.styles == 'black') {
-                    var mapStyle = [{
+                    var ms = [{
                         "featureType": "all",
                         "elementType": "labels.text.fill",
                         "stylers": [{
@@ -341,7 +341,7 @@
                         }]
                     }];
                 } else if (op.styles == 'river') {
-                    var mapStyle = [{
+                    var ms = [{
                         "featureType": "administrative",
                         "elementType": "labels.text.fill",
                         "stylers": [{
@@ -395,7 +395,7 @@
                         }]
                     }];
                 } else if (op.styles == 'cyan') {
-                    var mapStyle = [{
+                    var ms = [{
                         "featureType": "landscape.natural",
                         "elementType": "geometry.fill",
                         "stylers": [{
@@ -443,7 +443,7 @@
                         }]
                     }];
                 } else if (op.styles == 'green') {
-                    var mapStyle = [{
+                    var ms = [{
                         "featureType": "landscape.man_made",
                         "elementType": "geometry",
                         "stylers": [{
@@ -535,7 +535,7 @@
                         }]
                     }];
                 } else if (op.styles == 'metan') {
-                    var mapStyle = [{
+                    var ms = [{
                         "featureType": "administrative.locality",
                         "elementType": "all",
                         "stylers": [{
@@ -645,7 +645,7 @@
                         }]
                     }];
                 } else if (op.styles == 'yellow') {
-                    var mapStyle = [{
+                    var ms = [{
                         "featureType": "administrative",
                         "elementType": "labels.text.fill",
                         "stylers": [{
@@ -699,7 +699,7 @@
                         }]
                     }];
                 } else if (op.styles == 'red') {
-                    var mapStyle = [{
+                    var ms = [{
                         "elementType": "geometry",
                         "stylers": [{
                             "visibility": "simplified"
@@ -735,7 +735,7 @@
                         }]
                     }];
                 } else {
-                    var mapStyle = '';
+                    var ms = '';
                 }
                 // GET MAIN MAP at Geocoder
                 var geocoder = new google.maps.Geocoder();
@@ -743,27 +743,27 @@
                     'address': op.Address
                 }, function (results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
-                        var AddressLat = results[0].geometry.location.lat();
-                        var AddressLng = results[0].geometry.location.lng();
+                        var adLat = results[0].geometry.location.lat();
+                        var adLng = results[0].geometry.location.lng();
                     } else {
-                        var AddressLat = op.Lat;
-                        var AddressLng = op.Lng;
+                        var adLat = op.Lat;
+                        var adLng = op.Lng;
                     }
 
                     // Get Center
-                    var NewMarginLat = AddressLat - op.MarginLat;
-                    var NewMarginLng = AddressLng - op.MarginLng;
+                    var marL = adLat - op.MarginLat;
+                    var marG = adLng - op.MarginLng;
 
                     // Options
                     var options = {
                         zoom: op.zoom,
-                        center: op.center === 'true' ? new google.maps.LatLng(NewMarginLat, NewMarginLng) : new google.maps.LatLng(AddressLat, AddressLng),
+                        center: op.center === 'true' ? new google.maps.LatLng(marL, marG) : new google.maps.LatLng(adLat, adLng),
                         scrollwheel: op.scrollwheel === 'true' ? true : false,
                         draggable: op.draggable === 'true' ? true : false,
                         disableDefaultUI: op.disableDefaultUI === 'false' ? false : true,
-                        styles: mapStyle,
+                        styles: ms,
                         disableDoubleClickZoom: op.disableDoubleClickZoom === 'false' ? false : true,
-                        fullscreenControl: op.fullscreenControl === 'false' ? false : true,
+                        fullscreenControl: op.fullscreenControl === 'true' ? true : false,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     };
 
@@ -771,7 +771,7 @@
                     // Set position & Icon
                     var image = new google.maps.MarkerImage(op.imgMap);
                     var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(AddressLat, AddressLng),
+                        position: new google.maps.LatLng(adLat, adLng),
                         map: map,
                         animation: google.maps.Animation.DROP,
                         icon: image,
