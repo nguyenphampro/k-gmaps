@@ -33,6 +33,8 @@
                 InfoWidth: 400,
                 OpenURL: 'view full map',
                 disableOpenURL: true,
+                disableDoubleClickZoom: false,
+                fullscreenControl: false,
                 Title: '',
                 Address: ''
             };
@@ -58,6 +60,8 @@
                     OpenURL: me.find('.OpenURL').text(),
                     Title: me.find('.Title').text(),
                     Address: me.find('address').text(),
+                    disableDoubleClickZoom: me.find('.disableDoubleClickZoom').text(),
+                    fullscreenControl: me.find('.fullscreenControl').text(),
                     disableOpenURL: me.find('.disableOpenURL').text()
                 };
 
@@ -80,6 +84,8 @@
                         Title: checkClass.Title ? checkClass.Title : defaultval.Title,
                         OpenURL: checkClass.OpenURL ? checkClass.OpenURL : defaultval.OpenURL,
                         disableOpenURL: checkClass.disableOpenURL ? checkClass.disableOpenURL : defaultval.disableOpenURL,
+                        fullscreenControl: checkClass.fullscreenControl ? checkClass.fullscreenControl : defaultval.fullscreenControl,
+                        disableDoubleClickZoom: checkClass.disableDoubleClickZoom ? checkClass.disableDoubleClickZoom : defaultval.disableDoubleClickZoom,
                         Address: checkClass.Address ? checkClass.Address : defaultval.Address
 
                     };
@@ -102,6 +108,8 @@
                         Title: maps_options.Title ? maps_options.Title : defaultval.Title,
                         OpenURL: maps_options.OpenURL ? maps_options.OpenURL : defaultval.OpenURL,
                         disableOpenURL: maps_options.disableOpenURL ? maps_options.disableOpenURL : defaultval.disableOpenURL,
+                        disableDoubleClickZoom: maps_options.disableDoubleClickZoom ? maps_options.disableDoubleClickZoom : defaultval.disableDoubleClickZoom,
+                        fullscreenControl: maps_options.fullscreenControl ? maps_options.fullscreenControl : defaultval.fullscreenControl,
                         Address: maps_options.Address ? maps_options.Address : defaultval.Address
                     };
                 }
@@ -115,7 +123,7 @@
                     controlUI.style.borderRadius = '2px';
                     controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
                     controlUI.style.cursor = 'pointer';
-                    controlUI.style.marginBottom = '22px';
+                    controlUI.style.marginBottom = '5px';
                     controlUI.style.marginTop = '10px';
                     controlUI.style.marginRight = '10px';
                     controlUI.style.textAlign = 'center';
@@ -754,6 +762,8 @@
                         draggable: op.draggable === 'true' ? true : false,
                         disableDefaultUI: op.disableDefaultUI === 'false' ? false : true,
                         styles: mapStyle,
+                        disableDoubleClickZoom: op.disableDoubleClickZoom === 'false' ? false : true,
+                        fullscreenControl: op.fullscreenControl === 'false' ? false : true,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     };
 
