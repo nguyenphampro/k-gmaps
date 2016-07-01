@@ -139,7 +139,7 @@
                     cx.style.paddingLeft = '3px';
                     cx.style.paddingRight = '3px';
                     if (op.Address) {
-                        cx.innerHTML = '<a target=_blank href="' + url + op.Address + '/@' + op.Lat + ',' + op.Lng + ',' + op.zoom + 'z">' + op.OpenURL + '</a>';
+                        cx.innerHTML = '<a target=_blank href="' + url + encodeURIComponent(op.Address.trim()).replace(/%20/g, "+") + '/@' + op.Lat + ',' + op.Lng + ',' + op.zoom + 'z">' + op.OpenURL + '</a>';
                     } else {
                         cx.innerHTML = '<a target=_blank href="' + url + '@' + op.Lat + ',' + op.Lng + ',' + op.zoom + 'z">' + op.OpenURL + '</a>';
                     }
