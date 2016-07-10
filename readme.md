@@ -27,6 +27,12 @@
 * ...
 
 ===============================
+
+##Demo 
+http://baonguyenyam.github.io/docs/k-gmaps/
+
+---
+
 #Install
 
 ***Via Bower:***
