@@ -89,7 +89,7 @@ ___
   <div class="mapCenter">true</div>
   <div class="Title">Hello</div>
   <div class="infoWidth">200</div>
-  <div class="mapStyle">black</div>
+  <div class="ms">black</div>
   <div class="mapZoom">15</div>
   <div class="scrollwheel">true</div>
   <div class="disableDoubleClickZoom">true</div>
