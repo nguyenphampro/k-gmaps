@@ -4,6 +4,7 @@
 /.idea/
 Homestead.yaml
 Homestead.json
+package-lock.json
 .env
 
 # @BAONGUYEN
